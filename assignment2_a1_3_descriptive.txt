@@ -1,0 +1,30 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Feb 14 15:11:37 2017
+
+@author: shreejiths
+"""
+#Python Template for ES2B4 Assignment - 2
+
+#Name: Alex Barker
+#ID : U1512136
+#Assignment Section : assignment_a1_3 descriptive
+
+######## Your Code Below ########
+1.3.1
+The input: [x**2/16 - y**2/4 for x in range (0,5) for y in [4,8,12,16,20]]
+This works by using x-values from 0 to 5 in steps of 1 by default for the y-values [4,8,12,16,20].
+The function's BIDMAS order is quite important, it squares both x and y-values then divides them by 16 and 4 
+respectively, it then subtracts the y**2/4 value from the x**2/16 value. It selects the order of values as follows.
+It will run through all the x=0 values against the y=4,8,12... then increase x by the step (not defined so default 1)
+so therefore move onto x=1 for y-values of 4,8,12...
+
+for loop equivalent:
+List = []
+for x in range (0,5):
+    for y in [4,8,12,16,20]:
+        List.append(x**2/16-y**2/4)
+print(List)
+
+1.3.2
