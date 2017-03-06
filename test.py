@@ -1,10 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Feb 14 15:11:37 2017
-
-@author: shreejiths
-"""
 #Python Template for ES2B4 Assignment - 2
 
 #Name: Alex Barker
