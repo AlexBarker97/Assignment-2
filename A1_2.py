@@ -6,22 +6,9 @@
 
 ######## Your Code Below ########
 import math
-
 def Tangent(AMin,AMax):
     '''Prints calues for the tangent of an angle in degrees'''
-    Angles=[x for x in range(AMin,AMax+1)]
-    Sin = []
-    Cos = []
-    Tan = []
-    i=AMin
-    for i in Angles:
-        i=math.radians(i)
-        Sin.append(int(math.sin(i)*10000000))
-        Cos.append(int(math.cos(i)*10000000))   
-    i=AMin
-    while i <= AMax:
-        Tan.append((Sin[i]/10000000)/(Cos[i]/10000000))
-        i+=1
+    Tan = [(math.sin(math.radians(x))/math.cos(math.radians(x))) for x in range(AMin,AMax+1)]
     print("Tangent of", AMin, "to", AMax,"degrees in steps of 1 degree: ")
     return(Tan)
 
