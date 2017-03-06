@@ -12,28 +12,15 @@ Created on Tue Feb 14 15:11:37 2017
 #Assignment Section : assignment_a1_3_2
 
 ######## Your Code Below ########
-
 def dictionary_comp():
-    i=input('Subject Code: ')
-    subject_code = {"ES2B0":0,"ES2B1":1,"ES2B2":2,"ES2B3":3,"ES2B4":4}
+    subject_code = ["ES2B0","ES2B1","ES2B2","ES2B3","ES2B4"]
     studentRecord = [
-                     [['John',90], ['Elvis',85], ['Thomas',95], ['Isha',85], ['Ranveer',79]],
-                     [['John',90], ['Elvis',85], ['Thomas',95], ['Isha',85], ['Ranveer',79]],
-                     [['John',90], ['Elvis',85], ['Thomas',95], ['Isha',85], ['Ranveer',79]],
-                     [['John',90], ['Elvis',85], ['Thomas',95], ['Isha',85], ['Ranveer',79]],
-                     [['John',90], ['Elvis',85], ['Thomas',95], ['Isha',85], ['Ranveer',79]]
+                     [('John',90), ('Elvis',85), ('Thomas',95), ('Isha',85), ('Ranveer',79)],
+                     [('John',90), ('Elvis',85), ('Thomas',95), ('Isha',85), ('Ranveer',79)],
+                     [('John',90), ('Elvis',85), ('Thomas',95), ('Isha',85), ('Ranveer',79)],
+                     [('John',90), ('Elvis',85), ('Thomas',95), ('Isha',85), ('Ranveer',79)],
+                     [('John',90), ('Elvis',85), ('Thomas',95), ('Isha',85), ('Ranveer',79)]
                     ]
-
-    subject_code = ['ES2B0','ES2B1','ES2B2','ES2B3','ES2B4']
-    print("test: ",subject_code)
-    
- #   sYR = dict((subject_code,studentRecord) for i in studentRecord[i])
-    
-    result = subject_code[subject_code[i]][studentRecord[i]]
-    print(result)
-
-dictionary_comp()
-
-
-
-
+    sYR = {subject_code:studentRecord for (subject_code,studentRecord) in zip(subject_code,studentRecord)}
+    return(sYR)
+print(dictionary_comp())
