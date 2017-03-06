@@ -1,0 +1,9 @@
+#Python Template for ES2B4 Assignment - 2
+
+#Name: Alex Barker
+#ID : U1512136
+#Assignment Section : A1.3.3
+
+######## Your Code Below ########
+The list comprehension given gets the numerical value from each entry which has the first part equal to 'John' 
+for each key. It then sums these and returns the total for every mark that the entry 'John' has.
