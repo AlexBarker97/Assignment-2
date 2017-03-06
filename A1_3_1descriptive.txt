@@ -26,5 +26,3 @@ for x in range (0,5):
     for y in [4,8,12,16,20]:
         List.append(x**2/16-y**2/4)
 print(List)
-
-1.3.2
