@@ -6,7 +6,6 @@
 
 ######## Your Code Below ########
 from a2_2 import fibonacci
-        
 ListofElements = [0,46,92,52,68,22,64,62,1,2,3,18,19,108,105,104,61]
 ListofElements.sort()
 print(ListofElements)
@@ -38,10 +37,6 @@ def fibonacciAlgorithm(x,k=k,p=p,F=F,ListofElements=ListofElements,offset=0):
           k = F[p - 1]
         else:
           k=0
-        
         fibonacciAlgorithm(x,k,p,F,ListofElements,offset)
 
 fibonacciAlgorithm(x)
-
-
-
