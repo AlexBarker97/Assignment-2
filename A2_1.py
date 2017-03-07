@@ -22,21 +22,25 @@ def PigLatinImproved():
             for word in wordlist:
                 firstLet = word[0]
                 vowelFound = 0
+                temp.clear()
                 for letter in word:
                     val = ord(letter)
                     if (val <=122 and val >= 97):
                         if letter in vowels and not vowelFound:
                             vowelFound = 1
                             converted = converted + letter
-                        else:
+                        elif not vowelFound:
                             temp.append(letter)
+                            print(temp)
+                        else:
+                            converted = converted + letter
                     elif val in punc:
-#####                        if vowelFound:
-#####                        puncFound.append(letter)
+                        puncFound.append(letter)
                     else:
                         converted = converted + letter
                 for letter in temp:
                     converted = converted + letter
+                temp.clear()
                 for i in puncFound:
                     converted = converted + i
                 if firstLet in vowels:
@@ -45,7 +49,6 @@ def PigLatinImproved():
                     converted = converted + "ay"
                 else:
                     converted = converted + "way"
-                temp.clear()
                 converted = converted + " "
         print(converted)
 PigLatinImproved()
