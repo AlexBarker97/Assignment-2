@@ -6,61 +6,46 @@
 
 ######## Your Code Below ########
 def PigLatinImproved():
-    VOWELS = ["a","e","i","o","u"]
-    PuncMarks = [46,44,33,58,59,39,34,45,95,40,41,91,93,123,125]
-    PuncFound = []
-    ASCII = []
-    SpaceFound = []
-    IN = 0
-    while IN == 0:
-        IN = input("Sentence to translate: ")
-        if IN == 'quit':
-            IN = 1
+    vowels = ["a","e","i","o","u"]
+    punc = [".",",","!",":",";","'",'"',"-","_","(",")","[","]","{","}"]
+    puncFound = []
+    temp = []
+    IN = 1
+    while IN:
+        IN = input("Sentence to translate: ").lower()
+        if IN == "quit":
+            IN = 0
         else:
-            words = IN.lower()
-            L = len(words)
-            for i in words:
-                ASCII.append(ord(i))
-            print(ASCII)
-            i=0
-            while i < L:
-                val = ASCII[i]
-                if val == 32:
-                    SpaceFound.append(i)
-                    i+=1
-                else:
-                    i+=1
-            ####################################################len(SpaceFound)
-            FirstLet = words[0]
-            ErrorState = 0
-            i = 0
-            OUT = ""
-            if FirstLet in VOWELS:
-                OUT = OUT + FirstLet
-                while i < L:
-                    test = words[i]
-                    val = ord(test)
-                    i+=1
+            wordlist = IN.split()
+            print(wordlist)
+            converted = ""
+            for word in wordlist:
+                firstLet = word[0]
+                vowelFound = 0
+                for letter in word:
+                    val = ord(letter)
                     if (val <=122 and val >= 97):
-                        OUT = OUT + test
-                        continue
-                    elif val in PuncMarks:
-                        PuncFound.append(test)
-                        continue
+                        if letter in vowels and not vowelFound:
+                            vowelFound = 1
+                            converted = converted + letter
+                        else:
+                            temp.append(letter)
+                    elif val in punc:
+#####                        if vowelFound:
+#####                        puncFound.append(letter)
                     else:
-                        ErrorState = 1
-                        break
-                if FirstLet in VOWELS:
-                    for i in PuncFound:
-                        OUT = OUT + i
-                        OUT = OUT[1:] + "hay"    
+                        converted = converted + letter
+                for letter in temp:
+                    converted = converted + letter
+                for i in puncFound:
+                    converted = converted + i
+                if firstLet in vowels:
+                    converted = converted + "hay"
+                elif firstLet not in vowels and vowelFound:
+                    converted = converted + "ay"
                 else:
-                    OUT = OUT[1:L] + FirstLet
-                    for i in PuncFound:
-                        OUT = OUT + i
-                        OUT = OUT + "ay"
-                if ErrorState == 1:
-                    print("Please only give letters and punctuation") 
-                else:
-                    print(OUT)
+                    converted = converted + "way"
+                temp.clear()
+                converted = converted + " "
+        print(converted)
 PigLatinImproved()
