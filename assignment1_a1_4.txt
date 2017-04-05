@@ -1,0 +1,21 @@
+'abc' > 123
+Comparing string '' to int() not possible
+
+'apple' < 'banana'
+True because it compares starting from the left, 'b' has a 1 higher ASCII than 'a'.
+
+'oranges' < 'ORANGES'
+False because lower case comes after upper case in ASCII, therefore O < o.
+
+a = True
+b = (5 > 7)
+a == b 
+If a is true, b is not true then a is not equal to b. Therefore false.
+
+str = ""
+not str 
+An empty string is false, therefore the not of this is true.
+
+string = "0"
+not string
+A string contains something, and is therefore true, the not of this is false.

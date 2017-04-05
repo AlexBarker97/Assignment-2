@@ -1,0 +1,34 @@
+general observations:
+/ floating point division giving a float output
+// floor division giving rounds down, depends on data type on what it outputs (if any float it will give float out)
+** power (if any inputs are float, output will be float, otherwise it is integer)
+If result is a decimal it will automatically make output a float and pring the full result.
+
+1) 
+5/2
+The floating point division operator does the division creating a float value as the answer.
+5/2.0
+Again this gives a float value as a result.
+5/2.0
+Same as above
+5//2
+Floor divison rounds down to an integer value
+5.0//2.0
+Again rounds down but gives a float keeping to the decimal places on the input.
+
+2)
+7*(1/2)
+Floating point division again giving a floating point.
+7*(1//2.0)
+Rounds down to 7, multiplied by 0 giving 0.0 float
+8*1//2.0
+simple float output given 8 multiplied by 1 happens before division so that it is not rounded down to zero.
+
+3)
+1/3.0
+Floating point division gives a float or 0.33recurring.
+
+4)
+5**2.0 ** being a power function to the power of a float always returns a float
+5.0**2.0 same result as before due to there being a float on the input
+5**2 integer result output due to all values input being integers
